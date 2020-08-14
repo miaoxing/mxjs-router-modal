@@ -1,6 +1,6 @@
-import React from "react";
-import {Modal} from "react-bootstrap";
-import {withRouter} from "react-router";
+import React from 'react';
+import {Modal} from 'react-bootstrap';
+import {withRouter} from 'react-router';
 
 @withRouter
 export default class ModalView extends React.Component {

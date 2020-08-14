@@ -1,6 +1,6 @@
 import React from 'react';
 import {Switch, withRouter} from 'react-router';
-import ModalView from "./ModalView";
+import ModalView from './ModalView';
 
 export const ModalContext = React.createContext({});
 
