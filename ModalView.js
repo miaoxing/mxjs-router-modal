@@ -5,11 +5,11 @@ import {withRouter} from 'react-router';
 @withRouter
 export default class ModalView extends React.Component {
   static defaultProps = {
-    length: 1
+    length: 1,
   };
 
   state = {
-    show: true
+    show: true,
   };
 
   handleHide = () => {
