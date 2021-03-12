@@ -1,3 +1,10 @@
+## [0.1.2](https://github.com/miaoxing/mxjs-router-modal/compare/v0.1.1...v0.1.2) (2021-03-12)
+
+
+### Bug Fixes
+
+* 更新前端包依赖 ([c233bf4](https://github.com/miaoxing/mxjs-router-modal/commit/c233bf4a5c2ebeff4620b22b05ff515638ef7150))
+
 ## [0.1.1](https://github.com/miaoxing/mxjs-router-modal/compare/v0.1.0...v0.1.1) (2020-08-13)
 
 
