@@ -6,5 +6,8 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "react-bootstrap": "^1.0.0"
   }
 }
