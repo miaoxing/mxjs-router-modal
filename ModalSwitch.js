@@ -12,7 +12,7 @@ export default class ModalSwitch extends React.Component {
   length = 1;
   previousLocation = this.props.location;
 
-  componentWillUpdate(nextProps) {
+  UNSAFE_componentWillUpdate(nextProps) {
     let {location} = this.props;
 
     // set previousLocation if props.location is not modal
