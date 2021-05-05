@@ -1,11 +1,18 @@
 import React from 'react';
 import {Modal} from 'react-bootstrap';
 import {withRouter} from 'react-router';
+import PropTypes from 'prop-types';
 
-@withRouter
-export default class ModalView extends React.Component {
+export default @withRouter
+class ModalView extends React.Component {
   static defaultProps = {
     length: 1,
+  };
+
+  static propTypes = {
+    history: PropTypes.object,
+    length: PropTypes.number,
+    children: PropTypes.node,
   };
 
   state = {

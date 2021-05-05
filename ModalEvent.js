@@ -1,11 +1,17 @@
 import React from 'react';
 import {withRouter} from 'react-router';
+import PropTypes from 'prop-types';
 
-@withRouter
-export default class ModalEvent extends React.Component {
+export default @withRouter
+class ModalEvent extends React.Component {
   static defaultProps = {
     onEnter: null,
     onExit: null,
+  };
+
+  static propTypes = {
+    history: PropTypes.object,
+    children: PropTypes.node,
   };
 
   isModal;

@@ -1,14 +1,21 @@
 import React from 'react';
 import {Switch, withRouter} from 'react-router';
 import ModalView from './ModalView';
+import PropTypes from 'prop-types';
 
 export const ModalContext = React.createContext({});
 
 /**
  * @link https://reacttraining.com/react-router/web/example/modal-gallery
  */
-@withRouter
-export default class ModalSwitch extends React.Component {
+export default @withRouter
+class ModalSwitch extends React.Component {
+  static propTypes = {
+    location: PropTypes.object,
+    history: PropTypes.object,
+    children: PropTypes.node,
+  };
+
   length = 1;
   previousLocation = this.props.location;
 
