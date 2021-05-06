@@ -2,8 +2,9 @@ import React from 'react';
 import {Switch, withRouter} from 'react-router';
 import ModalView from './ModalView';
 import PropTypes from 'prop-types';
+import ModalContext from '@mxjs/router/ModalContext';
 
-export const ModalContext = React.createContext({});
+export {ModalContext};
 
 /**
  * @link https://reacttraining.com/react-router/web/example/modal-gallery
