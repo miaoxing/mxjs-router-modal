@@ -1,3 +1,19 @@
+## [0.1.3](https://github.com/miaoxing/mxjs-router-modal/compare/v0.1.2...v0.1.3) (2021-05-11)
+
+
+### Bug Fixes
+
+* `ModalContext` 移到 `@mxjs/router` 中，解决循环依赖 ([5c9934b](https://github.com/miaoxing/mxjs-router-modal/commit/5c9934ba21bd9c463cf8f02927debef0e6cb1e65))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/router:** upgrade from `0.1.2` to `0.1.3`
+* **@miaoxing/dev:** upgrade from `6.4.0` to `7.0.0`
+
 ## [0.1.2](https://github.com/miaoxing/mxjs-router-modal/compare/v0.1.1...v0.1.2) (2021-03-12)
 
 
