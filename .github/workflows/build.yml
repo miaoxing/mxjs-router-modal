@@ -44,6 +44,7 @@ jobs:
 
       - name: Coveralls
         if: startsWith(hashFiles('coverage/lcov.info'), '5df6e0e27613') == false
+        continue-on-error: true
         env:
           COVERALLS_FLAG_NAME: node-${{ matrix.node-version }}
         uses: coverallsapp/github-action@master
@@ -54,6 +55,7 @@ jobs:
   coveralls-finish:
     needs: [ jest ]
     runs-on: ubuntu-18.04
+    continue-on-error: true
     steps:
       - name: Coveralls Finished
         uses: coverallsapp/github-action@master
