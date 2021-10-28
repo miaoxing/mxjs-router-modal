@@ -1,3 +1,24 @@
+# [0.2.0](https://github.com/miaoxing/mxjs-router-modal/compare/v0.1.4...v0.2.0) (2021-10-28)
+
+
+### Features
+
+* `react` 依赖移到 `peerDependencies` 中，开发依赖使用 `react` 17 ([6125df5](https://github.com/miaoxing/mxjs-router-modal/commit/6125df5778b0300dd4665eb28cf6c4f72685b153))
+
+
+### BREAKING CHANGES
+
+* `react` 依赖移到 `peerDependencies` 中，开发依赖使用 `react` 17
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/router:** upgrade from `0.1.4` to `0.2.0`
+* **@miaoxing/dev:** upgrade from `7.0.1` to `8.0.0`
+
 ## [0.1.4](https://github.com/miaoxing/mxjs-router-modal/compare/v0.1.3...v0.1.4) (2021-05-12)
 
 
