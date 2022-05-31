@@ -35,7 +35,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Replace package dependencies
-        run: npx replace-pkg-dep package.json
+        run: npx replace-pkg-dep package.json main
 
       - name: Yarn install
         run: yarn install
@@ -91,7 +91,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Replace package dependencies
-        run: npx replace-pkg-dep package.json
+        run: npx replace-pkg-dep package.json main
 
       - name: Yarn install
         run: yarn install
@@ -125,7 +125,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Replace package dependencies
-        run: npx replace-pkg-dep package.json
+        run: npx replace-pkg-dep package.json main
 
       - name: Yarn install
         run: yarn install
