@@ -1,5 +1,7 @@
 import {Link} from '@mxjs/router';
 
-export default (props) => (
+const ModalLink = (props) => (
   <Link modal {...props}/>
 );
+
+export default ModalLink;
