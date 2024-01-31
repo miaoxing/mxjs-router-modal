@@ -1,3 +1,18 @@
+## [0.2.15](https://github.com/miaoxing/mxjs-router-modal/compare/v0.2.14...v0.2.15) (2024-01-31)
+
+
+### Features
+
+* 更新 `react` 支持 18 ([b9ac71d](https://github.com/miaoxing/mxjs-router-modal/commit/b9ac71d4e25b122ac045eee7a83892133d884c2b))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/router:** upgrade from `0.2.14` to `0.2.15`
+
 ## [0.2.14](https://github.com/miaoxing/mxjs-router-modal/compare/v0.2.13...v0.2.14) (2024-01-08)
 
 
