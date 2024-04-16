@@ -1,75 +1,70 @@
-import React from 'react';
-import {Switch, withRouter} from 'react-router';
+import { useEffect, useState } from 'react';
+import { Switch, useLocation } from 'react-router';
 import ModalView from './ModalView';
 import PropTypes from 'prop-types';
 import ModalContext from '@mxjs/router/ModalContext';
+import { history } from '@mxjs/app';
 
-export {ModalContext};
+export { ModalContext };
 
-/**
- * @link https://reacttraining.com/react-router/web/example/modal-gallery
- */
-export default @withRouter
-class ModalSwitch extends React.Component {
-  static propTypes = {
-    location: PropTypes.object,
-    history: PropTypes.object,
-    children: PropTypes.node,
+const ModalSwitch = ({ children }) => {
+  const location = useLocation();
+  const [length, setLength] = useState(1);
+  const [previousLocation, setPreviousLocation] = useState(location);
+
+  useEffect(() => {
+    const handleUpdate = (nextLocation) => {
+      if (history.action !== 'POP' && (!nextLocation.state || !nextLocation.state.modal)) {
+        setPreviousLocation(location);
+      }
+
+      const modal = location.state && location.state.modal;
+      const nextModal = nextLocation.state && nextLocation.state.modal;
+
+      if (modal && nextModal) {
+        if (history.action === 'PUSH') {
+          // modal 中下一页
+          setLength(length + 1);
+        } else if (history.action === 'POP') {
+          // modal 中上一页
+          setLength(length - 1);
+        }
+      }
+
+      if (!nextModal) {
+        setLength(1);
+      }
+    };
+
+    history.listen(handleUpdate);
+
+    return () => {
+      history.listen(handleUpdate);
+    };
+  }, [location, history, length]);
+
+  const isModal = () => {
+    return location.state && location.state.modal && previousLocation !== location;
   };
 
-  length = 1;
-  previousLocation = this.props.location;
+  return (
+    <ModalContext.Provider value={{ isModal: isModal() }}>
+      <Switch location={isModal() ? previousLocation : location}>
+        {children}
+      </Switch>
+      {isModal() && (
+        <ModalView length={length}>
+          <Switch>{children}</Switch>
+        </ModalView>
+      )}
+    </ModalContext.Provider>
+  );
+};
 
-  UNSAFE_componentWillUpdate(nextProps) {
-    let {location} = this.props;
+ModalSwitch.propTypes = {
+  location: PropTypes.object,
+  history: PropTypes.object,
+  children: PropTypes.node,
+};
 
-    // set previousLocation if props.location is not modal
-    if (
-      nextProps.history.action !== 'POP' &&
-      (!location.state || !location.state.modal)
-    ) {
-      this.previousLocation = this.props.location;
-    }
-
-    const modal = location.state && location.state.modal;
-    const nextModal = nextProps.location.state && nextProps.location.state.modal;
-    if (modal && nextModal) {
-      if (nextProps.history.action === 'PUSH') {
-        // modal 中下一页
-        this.length++;
-      } else if (nextProps.history.action === 'POP') {
-        // modal 中上一页
-        this.length--;
-      }
-    }
-
-    if (!nextModal) {
-      // 退出 modal
-      this.length = 1;
-    }
-  }
-
-  isModal() {
-    let {location} = this.props;
-    return location.state &&
-      location.state.modal &&
-      this.previousLocation !== location; // not initial render
-  }
-
-  render() {
-    const isModal = this.isModal();
-
-    return (
-      <ModalContext.Provider value={{isModal: isModal}}>
-        <Switch location={isModal ? this.previousLocation : this.props.location}>
-          {this.props.children}
-        </Switch>
-        {isModal && <ModalView length={this.length}>
-          <Switch>
-            {this.props.children}
-          </Switch>
-        </ModalView>}
-      </ModalContext.Provider>
-    );
-  }
-}
+export default ModalSwitch;

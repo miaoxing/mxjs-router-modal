@@ -1,44 +1,36 @@
-import React from 'react';
-import {Modal} from 'react-bootstrap';
-import {withRouter} from 'react-router';
+import { useState } from 'react';
+import { Modal } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
-export default @withRouter
-class ModalView extends React.Component {
-  static defaultProps = {
-    length: 1,
+const ModalView = ({ history, length = 1, children }) => {
+  const [show, setShow] = useState(true);
+
+  const handleHide = () => {
+    setShow(false);
   };
 
-  static propTypes = {
-    history: PropTypes.object,
-    length: PropTypes.number,
-    children: PropTypes.node,
+  const handleExited = () => {
+    history.go(-length);
   };
 
-  state = {
-    show: true,
-  };
+  return (
+    <Modal
+      show={show}
+      onHide={handleHide}
+      onExited={handleExited}
+      className="modal-right"
+    >
+      <Modal.Body className="page-content">
+        {children}
+      </Modal.Body>
+    </Modal>
+  );
+};
 
-  handleHide = () => {
-    this.setState({show: false});
-  };
+ModalView.propTypes = {
+  history: PropTypes.object,
+  length: PropTypes.number,
+  children: PropTypes.node,
+};
 
-  handleExited = () => {
-    this.props.history.go(-this.props.length);
-  };
-
-  render() {
-    return (
-      <Modal
-        show={this.state.show}
-        onHide={this.handleHide}
-        onExited={this.handleExited}
-        className="modal-right"
-      >
-        <Modal.Body className="page-content">
-          {this.props.children}
-        </Modal.Body>
-      </Modal>
-    );
-  }
-}
+export default ModalView;

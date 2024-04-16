@@ -1,48 +1,53 @@
-import React from 'react';
-import {withRouter} from 'react-router';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { history } from '@mxjs/app';
 
-export default @withRouter
-class ModalEvent extends React.Component {
-  static defaultProps = {
-    onEnter: null,
-    onExit: null,
-  };
+const ModalEvent = ({ children, onEnter, onExit }) => {
+  let isModal = false;
 
-  static propTypes = {
-    history: PropTypes.object,
-    children: PropTypes.node,
-  };
+  useEffect(() => {
+    const handleEvent = (location, action) => {
+      const nextIsModal = location.state && location.state.modal;
 
-  isModal;
-
-  componentDidMount() {
-    this.unlisten = this.props.history.listen((location, action) => {
-      const isModal = location.state && location.state.modal;
-
-      if (this.isModal && !isModal) {
-        this.handleEvent('onExit', location, action);
+      if (isModal && !nextIsModal) {
+        callEvent(onExit, location, action);
       }
 
-      if (!this.isModal && isModal) {
-        this.handleEvent('onEnter', location, action);
+      if (!isModal && nextIsModal) {
+        callEvent(onEnter, location, action);
       }
 
-      this.isModal = isModal;
+      isModal = nextIsModal;
+    };
+
+    const unlisten = history.listen((location, action) => {
+      handleEvent(location, action);
     });
-  }
 
-  componentWillUnmount() {
-    this.unlisten();
-  }
+    return () => {
+      unlisten();
+    };
+  }, [history, onEnter, onExit]);
 
-  handleEvent(event, location, action) {
-    if (this.props[event]) {
-      this.props[event](location, action);
+  const callEvent = (event, location, action) => {
+    if (event) {
+      event(location, action);
     }
-  }
+  };
 
-  render() {
-    return this.props.children || '';
-  }
-}
+  return children || '';
+};
+
+ModalEvent.defaultProps = {
+  onEnter: null,
+  onExit: null,
+};
+
+ModalEvent.propTypes = {
+  history: PropTypes.object.isRequired,
+  children: PropTypes.node,
+  onEnter: PropTypes.func,
+  onExit: PropTypes.func,
+};
+
+export default ModalEvent;
