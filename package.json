@@ -10,8 +10,8 @@
   "dependencies": {
     "react-bootstrap": "^1.0.0",
     "prop-types": "^15.7.2",
-    "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0",
+    "react-router": "^6",
+    "react-router-dom": "^6",
     "@mxjs/router": "^0.2.16"
   },
   "devDependencies": {
