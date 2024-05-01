@@ -1,3 +1,24 @@
+# [0.3.0](https://github.com/miaoxing/mxjs-router-modal/compare/v0.2.16...v0.3.0) (2024-05-01)
+
+
+### Features
+
+* 更新 `react-router` 到 v6 ([92a87ec](https://github.com/miaoxing/mxjs-router-modal/commit/92a87ec230a381e557370ba8b9d8ee1241553956))
+* **router-modal:** 更新组件为函数式 ([0e488fa](https://github.com/miaoxing/mxjs-router-modal/commit/0e488fa28134e80f5d82c9784d665c6c6ef3790c))
+
+
+### BREAKING CHANGES
+
+* 更新 `react-router` 到 v6
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/router:** upgrade from `0.2.16` to `0.3.0`
+
 ## [0.2.16](https://github.com/miaoxing/mxjs-router-modal/compare/v0.2.15...v0.2.16) (2024-03-31)
 
 
