@@ -1,5 +1,13 @@
-export ModalEvent from './ModalEvent';
-export ModalLink from './ModalLink';
-export ModalSwitch from './ModalSwitch';
-export ModalView from './ModalView';
-export ModalContext from './ModalSwitch';
+import ModalEvent from './ModalEvent';
+import ModalLink from './ModalLink';
+import ModalSwitch from './ModalSwitch';
+import ModalView from './ModalView';
+import ModalContext from './ModalSwitch';
+
+export {
+  ModalEvent,
+  ModalLink,
+  ModalSwitch,
+  ModalView,
+  ModalContext,
+};
