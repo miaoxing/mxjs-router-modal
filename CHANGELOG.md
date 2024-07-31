@@ -1,3 +1,19 @@
+## [0.3.1](https://github.com/miaoxing/mxjs-router-modal/compare/v0.3.0...v0.3.1) (2024-07-31)
+
+
+### Bug Fixes
+
+* `export default from` 改为标准语法 ([fa14302](https://github.com/miaoxing/mxjs-router-modal/commit/fa14302cce6e3ae2febd323182645aadfbca69d8))
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/router:** upgrade from `0.3.0` to `0.3.1`
+* **@miaoxing/dev:** upgrade from `9.1.1` to `9.1.2`
+
 # [0.3.0](https://github.com/miaoxing/mxjs-router-modal/compare/v0.2.16...v0.3.0) (2024-05-01)
 
 
