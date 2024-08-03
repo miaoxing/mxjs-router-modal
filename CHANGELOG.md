@@ -1,3 +1,14 @@
+## [0.3.2](https://github.com/miaoxing/mxjs-router-modal/compare/v0.3.1...v0.3.2) (2024-08-03)
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/router:** upgrade from `0.3.1` to `0.3.2`
+* **@miaoxing/dev:** upgrade from `9.1.2` to `9.1.3`
+
 ## [0.3.1](https://github.com/miaoxing/mxjs-router-modal/compare/v0.3.0...v0.3.1) (2024-07-31)
 
 
