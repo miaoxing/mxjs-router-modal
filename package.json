@@ -1,6 +1,6 @@
 {
   "name": "@mxjs/router-modal",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "main": "index.js",
   "license": "MIT",
   "publishConfig": {
@@ -12,10 +12,10 @@
     "prop-types": "^15.7.2",
     "react-router": "^6",
     "react-router-dom": "^6",
-    "@mxjs/router": "^0.3.3"
+    "@mxjs/router": "^0.3.4"
   },
   "devDependencies": {
-    "@miaoxing/dev": "^9.2.0",
+    "@miaoxing/dev": "^9.3.0",
     "@testing-library/react": "^14",
     "react": ">=16.13.1",
     "react-dom": ">=16.13.1"
