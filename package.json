@@ -17,12 +17,12 @@
   "devDependencies": {
     "@miaoxing/dev": "^9.3.1",
     "@testing-library/react": "^14",
-    "react": ">=16.13.1",
-    "react-dom": ">=16.13.1"
+    "react": ">=16.13.1 <19",
+    "react-dom": ">=16.13.1 <19"
   },
   "peerDependencies": {
-    "react": ">=16.13.1",
-    "react-dom": ">=16.13.1"
+    "react": ">=16.13.1 <19",
+    "react-dom": ">=16.13.1 <19"
   },
   "jest": {
     "preset": "jest-preset-miaoxing"
