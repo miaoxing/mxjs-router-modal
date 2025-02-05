@@ -1,3 +1,10 @@
+## [0.3.6](https://github.com/miaoxing/mxjs-router-modal/compare/v0.3.5...v0.3.6) (2025-02-05)
+
+
+### Bug Fixes
+
+* 限制 react 版本低于 19，避免测试失败 ([673e65f](https://github.com/miaoxing/mxjs-router-modal/commit/673e65f713887b02e7f4cd9d88661521cab1727d))
+
 ## [0.3.5](https://github.com/miaoxing/mxjs-router-modal/compare/v0.3.4...v0.3.5) (2024-12-31)
 
 
